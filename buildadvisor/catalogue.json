@@ -1,0 +1,50 @@
+{
+  "components": [
+    {"type": "CPU", "name": "Intel Core i3-12100F", "price": 7500, "tier": "entry", "score": 48, "socket": "LGA1700", "tdp": 58},
+    {"type": "CPU", "name": "AMD Ryzen 5 5600", "price": 11500, "tier": "entry", "score": 58, "socket": "AM4", "tdp": 65},
+    {"type": "CPU", "name": "Intel Core i5-13400F", "price": 16500, "tier": "mid", "score": 74, "socket": "LGA1700", "tdp": 65},
+    {"type": "CPU", "name": "AMD Ryzen 5 7600", "price": 20500, "tier": "mid", "score": 78, "socket": "AM5", "tdp": 65},
+    {"type": "CPU", "name": "AMD Ryzen 7 7800X3D", "price": 38000, "tier": "high", "score": 96, "socket": "AM5", "tdp": 120},
+    {"type": "CPU", "name": "Intel Core i7-14700K", "price": 39500, "tier": "high", "score": 98, "socket": "LGA1700", "tdp": 125},
+
+    {"type": "GPU", "name": "NVIDIA GTX 1650", "price": 11000, "tier": "entry", "score": 42, "tdp": 75},
+    {"type": "GPU", "name": "AMD RX 6600", "price": 19500, "tier": "entry", "score": 64, "tdp": 132},
+    {"type": "GPU", "name": "NVIDIA RTX 4060", "price": 29000, "tier": "mid", "score": 80, "tdp": 115},
+    {"type": "GPU", "name": "NVIDIA RTX 4060 Ti", "price": 38500, "tier": "mid", "score": 88, "tdp": 160},
+    {"type": "GPU", "name": "NVIDIA RTX 4070 Super", "price": 62000, "tier": "high", "score": 108, "tdp": 220},
+    {"type": "GPU", "name": "NVIDIA RTX 4070 Ti Super", "price": 84000, "tier": "high", "score": 122, "tdp": 285},
+
+    {"type": "Motherboard", "name": "MSI A520M-A PRO", "price": 5500, "tier": "entry", "score": 40, "socket": "AM4", "ram_type": "DDR4", "form_factor": "mATX"},
+    {"type": "Motherboard", "name": "Gigabyte B550 AORUS ELITE", "price": 11000, "tier": "mid", "score": 55, "socket": "AM4", "ram_type": "DDR4", "form_factor": "ATX"},
+    {"type": "Motherboard", "name": "ASUS PRIME B650M-A", "price": 13500, "tier": "mid", "score": 58, "socket": "AM5", "ram_type": "DDR5", "form_factor": "mATX"},
+    {"type": "Motherboard", "name": "ASUS ROG STRIX X670E-F", "price": 34000, "tier": "high", "score": 78, "socket": "AM5", "ram_type": "DDR5", "form_factor": "ATX"},
+    {"type": "Motherboard", "name": "MSI PRO B760M-P", "price": 12000, "tier": "mid", "score": 56, "socket": "LGA1700", "ram_type": "DDR5", "form_factor": "mATX"},
+    {"type": "Motherboard", "name": "Gigabyte Z790 AORUS ELITE", "price": 28000, "tier": "high", "score": 76, "socket": "LGA1700", "ram_type": "DDR5", "form_factor": "ATX"},
+
+    {"type": "RAM", "name": "Corsair Vengeance 16GB DDR4 3200MHz", "price": 3200, "tier": "entry", "score": 48, "ram_type": "DDR4"},
+    {"type": "RAM", "name": "Corsair Vengeance 32GB DDR4 3600MHz", "price": 6000, "tier": "mid", "score": 60, "ram_type": "DDR4"},
+    {"type": "RAM", "name": "G.Skill Flare X5 16GB DDR5 5600MHz", "price": 4800, "tier": "mid", "score": 55, "ram_type": "DDR5"},
+    {"type": "RAM", "name": "G.Skill Trident Z5 32GB DDR5 6000MHz", "price": 9500, "tier": "high", "score": 70, "ram_type": "DDR5"},
+
+    {"type": "Storage", "name": "Crucial P3 500GB NVMe SSD", "price": 3000, "tier": "entry", "score": 45},
+    {"type": "Storage", "name": "WD Black SN770 1TB NVMe SSD", "price": 5800, "tier": "mid", "score": 60},
+    {"type": "Storage", "name": "Samsung 990 PRO 2TB NVMe SSD", "price": 13500, "tier": "high", "score": 78},
+
+    {"type": "PSU", "name": "Antec CSK 550W 80+ Bronze", "price": 3500, "tier": "entry", "score": 45, "wattage": 550},
+    {"type": "PSU", "name": "Corsair CX650 650W 80+ Bronze", "price": 5200, "tier": "mid", "score": 58, "wattage": 650},
+    {"type": "PSU", "name": "Corsair RM750e 750W 80+ Gold", "price": 8500, "tier": "high", "score": 72, "wattage": 750},
+    {"type": "PSU", "name": "Corsair RM850x 850W 80+ Gold", "price": 11000, "tier": "high", "score": 80, "wattage": 850},
+
+    {"type": "Case", "name": "Ant Esports ICE-120AG (mATX)", "price": 2800, "tier": "entry", "score": 40, "supports": ["mATX", "ITX"]},
+    {"type": "Case", "name": "NZXT H5 Flow (ATX)", "price": 7500, "tier": "mid", "score": 62, "supports": ["ATX", "mATX", "ITX"]},
+    {"type": "Case", "name": "Lian Li Lancool 216 (ATX)", "price": 9000, "tier": "high", "score": 74, "supports": ["ATX", "mATX", "ITX"]}
+  ],
+  "games": [
+    {"name": "Valorant", "weight": 0.6, "cpu_bound": true},
+    {"name": "CS2", "weight": 0.7, "cpu_bound": true},
+    {"name": "Fortnite", "weight": 0.9, "cpu_bound": false},
+    {"name": "GTA V", "weight": 1.0, "cpu_bound": false},
+    {"name": "Elden Ring", "weight": 1.3, "cpu_bound": false},
+    {"name": "Cyberpunk 2077", "weight": 1.6, "cpu_bound": false}
+  ]
+}

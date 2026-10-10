@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuildAdvisor - 40% Progress Presentation Scripts (Hinglish)</title>
+<style>
+  :root { --ink:#1a1a2e; --muted:#555; --accent:#3b3bd6; --line:#e2e2ef; --bg:#fafaff; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink); line-height: 1.6; max-width: 820px;
+    margin: 0 auto; padding: 40px 32px; background: #fff;
+  }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 24px; font-size: 14px; }
+  h2 {
+    font-size: 19px; margin: 34px 0 6px; padding: 10px 14px;
+    background: var(--bg); border-left: 4px solid var(--accent); border-radius: 4px;
+  }
+  .files { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+  .files code {
+    background: #f0f0f7; padding: 1px 6px; border-radius: 4px; font-size: 12px;
+  }
+  p { margin: 10px 0; }
+  ol, ul { margin: 8px 0 8px 4px; padding-left: 22px; }
+  li { margin: 5px 0; }
+  strong { color: var(--accent); }
+  .intro {
+    background: #f3f7ff; border: 1px solid var(--line);
+    border-radius: 8px; padding: 16px 20px; margin: 20px 0;
+  }
+  .tip {
+    background: #fff8e6; border: 1px solid #f0e0a8;
+    border-radius: 8px; padding: 14px 18px; margin: 24px 0; font-size: 14px;
+  }
+  footer { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 12px;
+           font-size: 12px; color: var(--muted); text-align: center; }
+  @media print {
+    body { padding: 0 12px; }
+    h2 { break-after: avoid; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<h1>BuildAdvisor &mdash; 40% Progress Presentation</h1>
+<p class="sub">Hinglish speaking scripts &middot; Frontend / Backend / Database &middot; AI-Powered PC Build Recommender for Gamers</p>
+
+<div class="intro">
+  <strong>Shared Intro (koi bhi start kar sakta hai &middot; ~30 sec)</strong>
+  <p>"Good morning everyone. Hamara project hai <strong>BuildAdvisor</strong> &mdash; ek AI-powered PC build recommender for gamers.
+  Idea simple hai: user apna <strong>budget</strong> aur <strong>target game</strong> daalta hai, aur hum usse ek complete,
+  <strong>compatible aur priced</strong> PC build recommend karte hain, saath mein plain language explanation ki yeh build kyun sahi hai.
+  Hamara tech stack bilkul SRS ke according hai &mdash; <strong>Streamlit</strong> frontend, <strong>Flask</strong> backend,
+  <strong>SQLite</strong> database, plus <strong>Gemini API</strong> explanation ke liye aur <strong>live pricing</strong>.
+  Aaj hum apne <strong>40% milestone</strong> par hain, aur hum teeno apni-apni layer explain karenge."</p>
+</div>
+
+<section>
+<h2>🎤 Member 1 &mdash; Frontend Developer (Streamlit)</h2>
+<p class="files">Screen par khula rakho: <code>app.py</code>, <code>api.py</code></p>
+
+<p>"Main ne <strong>frontend</strong> sambhala hai, jo hamare SRS ke according <strong>Streamlit</strong> mein bana hai &mdash;
+yeh ek Python framework hai jisse hum poori UI bina alag HTML, CSS ya JavaScript likhe bana sakte hain.</p>
+
+<p>Hamara frontend ek <strong>thin client</strong> hai. Iska matlab &mdash; ismein khud koi business logic nahi hai.
+Har action HTTP ke through hamare Flask backend ko jaata hai, ek chhote client module <code>api.py</code> ke through.
+Isse hamari layers clean aur alag rehti hain, jo SRS Section 5.5 mein bola gaya hai.</p>
+
+<p>Maine SRS Section 6.1 ke <strong>chaar screens</strong> banaye hain:</p>
+<ol>
+  <li><strong>Build Advisor</strong> &mdash; main screen. User ek slider se <strong>budget</strong> set karta hai,
+      <strong>target game</strong> aur <strong>resolution/FPS</strong> choose karta hai, aur <em>Generate Build</em> dabata hai.
+      Uske baad hum recommended parts, price table, estimated FPS, aur build kyun choose hui &mdash; yeh explanation dikhate hain.
+      User build ko <strong>naam de kar save aur share link</strong> bhi kar sakta hai.</li>
+  <li><strong>Upgrade Advisor</strong> &mdash; un logon ke liye jinke paas already PC hai. Woh apna current CPU, GPU, RAM
+      aur extra budget daalte hain, aur hum unka sabse bada bottleneck aur best single upgrade dikhate hain.</li>
+  <li><strong>Community</strong> &mdash; saved builds list karta hai aur users unhe rate kar sakte hain.</li>
+  <li><strong>Admin</strong> &mdash; password-protected dashboard components manage karne ke liye.</li>
+</ol>
+
+<p>Ek cheez jispe mujhe garv hai: sidebar mein ek <strong>live connection indicator</strong> hai &mdash;
+backend reachable ho toh green, warna red with instructions. Saath hi yeh bhi dikhta hai ki pricing aur AI
+<strong>live</strong> chal rahe hain ya <strong>simulated</strong>. Outage <strong>simulate</strong> karne ke toggles bhi hain,
+taaki hum SRS ke required graceful fallbacks demo kar sakein.</p>
+
+<p>40% milestone ke liye, chaaro screens backend ke saath end-to-end kaam kar rahe hain.
+Meri taraf se jo bacha hai woh hai <strong>visual polish</strong> aur <strong>input-validation messages</strong>, jo next sprint mein karenge."</p>
+</section>
+
+<section>
+<h2>🎤 Member 2 &mdash; Backend Developer (Flask + Business Logic)</h2>
+<p class="files">Screen par khula rakho: <code>backend.py</code>, <code>logic.py</code></p>
+
+<p>"Maine <strong>backend</strong> banaya hai, jo SRS Section 7.3 ke according <strong>Flask</strong> use karta hai.
+Yeh system ka dimaag hai &mdash; yeh request routing, saara business logic, aur database aur external services ke calls handle karta hai.</p>
+
+<p>Maine ek <strong>REST API</strong> banaya hai jo hamare SRS 3.11 ke sequence diagram se match karta hai. Main endpoints hain:</p>
+<ul>
+  <li><code>POST /generate-build</code> &mdash; core flow,</li>
+  <li><code>POST /upgrade</code> &mdash; upgrade advisor,</li>
+  <li><code>POST /builds</code> aur <code>GET /builds</code> &mdash; build save aur list,</li>
+  <li>rating endpoints, aur <strong>authentication-gated admin endpoints</strong> jo token se protected hain (SRS Section 12).</li>
+</ul>
+
+<p>Asli decision-making <code>logic.py</code> mein hoti hai. Main aapko build request ka flow batata hoon,
+kyunki yeh SRS Section 4 aur Section 9 ke business rules ko directly implement karta hai:</p>
+<ol>
+  <li>Hum <strong>budget validate</strong> karte hain aur minimum se kam kuch bhi reject karte hain (SRS 9.1) &mdash; yeh hamara test case TC02 hai.</li>
+  <li>Hum ek <strong>budget-aware algorithm</strong> se build generate karte hain jo saat parts mein paisa allocate karta hai,
+      aur saath hi sasta essential parts ke liye paisa reserve rakhta hai taaki build hamesha complete ho.</li>
+  <li>Hum <strong>compatibility checks</strong> chalate hain &mdash; CPU-motherboard socket, PSU wattage vs CPU+GPU power (safety margin ke saath),
+      RAM type, aur case form factor (SRS 9.2, test case TC03). Agar kuch incompatible ho, toh ek <strong>repair loop</strong> compatible parts substitute karta hai,
+      aur ek <strong>budget-trim pass</strong> guarantee karta hai ki hum kabhi budget cross na karein.</li>
+  <li>Hum ek benchmark model se <strong>FPS estimate</strong> karte hain, aur usse "approximate" mark karte hain jaisa SRS chahta hai.</li>
+  <li>Hum <strong>prices fetch</strong> karte hain aur ek <strong>AI explanation</strong> request karte hain.</li>
+</ol>
+
+<p>Ek design principle jo maine follow kiya: backend <strong>stateless</strong> hai aur har request par database se live component catalogue padhta hai (SRS 5.6).
+Toh jab admin naya part add karta hai, woh turant recommendations mein aa jaata hai &mdash; restart ki zaroorat nahi.</p>
+
+<p>40% par, poora build-generation aur upgrade flow kaam kar raha hai aur ₹42,000 se ₹2,50,000 tak ke budgets par test kiya gaya hai.
+Next sprint mein main FPS model aur error responses ko refine karunga."</p>
+</section>
+
+<section>
+<h2>🎤 Member 3 &mdash; Database Developer (SQLite + Integrations)</h2>
+<p class="files">Screen par khula rakho: <code>db.py</code> (aur optional <code>ai.py</code> / <code>pricing.py</code>)</p>
+
+<p>"Main <strong>data layer</strong> ka owner hoon. SRS Section 7.4 ke according hum development mein <strong>SQLite</strong> use karte hain,
+aur hamara schema aisa likha hai ki production ke liye <strong>MySQL par portable</strong> rahe.</p>
+
+<p>Maine <strong>Section 8 ke ER diagram ka poora schema</strong> implement kiya hai &mdash; saat tables:
+<strong>User, Component, Build, BuildComponent, Game, Benchmark, aur Rating</strong>. Do associative tables important hain:
+<strong>BuildComponent</strong> build aur uske parts ke beech many-to-many relationship resolve karti hai, aur
+<strong>Benchmark</strong> build aur games ke beech many-to-many resolve karti hai, har pair ka estimated FPS store karke.</p>
+
+<p>Ek design decision samjhata hoon: har component ke specs alag hote hain &mdash; CPU ka socket aur TDP hota hai,
+RAM ka type, PSU ki wattage. Dozens khaali columns banane ke bajaye, maine woh spec fields ek
+<strong>JSON blob</strong> mein <code>specs</code> column ke andar store kiye &mdash; yeh hamare data dictionary ke <code>specs TEXT</code> field se match karta hai
+aur schema ko clean aur MySQL-portable rakhta hai. Maine frequently filter hone waale fields jaise component type par
+<strong>index</strong> bhi lagaya (SRS 5.6). Database pehli baar chalne par khud <strong>create aur seed</strong> ho jaata hai,
+toh team clone karke turant chala sakti hai.</p>
+
+<p>Maine hamare do <strong>external integrations</strong> bhi banaye (SRS 7.5), dono clean interfaces ke peeche isolated:</p>
+<ul>
+  <li><strong><code>ai.py</code></strong> asli <strong>Gemini API</strong> ko call karta hai plain-language build explanation generate karne ke liye.</li>
+  <li><strong><code>pricing.py</code></strong> <strong>live retailer price scraping</strong> karta hai <code>requests</code> aur BeautifulSoup se,
+      plus ek <strong>cache</strong> jo repeated calls kam karta hai (SRS 5.1).</li>
+</ul>
+
+<p>Dono <strong>optional hain aur gracefully fail</strong> hote hain &mdash; agar API key na ho ya network down ho,
+toh hum local explanation aur last-known prices with timestamp par fall back kar jaate hain.
+Yeh bilkul SRS Section 9.4 aur Section 10 ka reliability behavior hai.</p>
+
+<p>40% par, database poora bana aur seed ho chuka hai, persistence kaam kar rahi hai &mdash; saved builds aur ratings restart ke baad bhi rehte hain &mdash;
+aur dono integrations fallbacks ke saath wired hain. Next sprint mein hum component aur benchmark data expand karenge."</p>
+</section>
+
+<div class="tip">
+  <strong>💡 Delivery Tips</strong>
+  <ul>
+    <li>Scripts ke saath ek <strong>live demo</strong> zaroor dikhana &mdash; ₹90,000 budget par Cyberpunk ke liye build generate karo,
+        phir sidebar toggle se fallback dikhao. Yeh ek interaction teeno layers ko saath kaam karte hue dikha deta hai.</li>
+    <li>Agar poocha jaaye "kya abhi baaki hai" &mdash; honest raho: visual polish, richer benchmark data, aur live scraping selectors
+        real sites par tuning maangte hain (yeh hamari SRS &sect;13 limitation hai).</li>
+  </ul>
+</div>
+
+<footer>
+  BuildAdvisor v2.0 &middot; Streamlit + Flask + SQLite &middot; 40% Progress Review
+</footer>
+
+</body>
+</html>
